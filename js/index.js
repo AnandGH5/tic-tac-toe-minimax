@@ -7,6 +7,7 @@ window.location.reload(false);
 
    var player="";  
 var opponent="";
+var temp;
 var board = [ 
   ['_', '_', '_'  ],   
   ['_', '_', '_'  ],
@@ -80,6 +81,29 @@ $("#o").click(function(){
    var x = document.getElementById('main');
         x.style.display = 'block';
    $("#start").hide();
+  
+  
+  
+  
+  
+    
+     
+        temp=player;
+    player =opponent;
+    opponent=temp;
+     // console.log(player);   
+      
+      var t=findBestMove(board); 
+     // console.log(t[0]+" "+t[1]); 
+       
+        
+      temp=player; 
+    player =opponent; 
+    opponent=temp; 
+         
+       board[t[0]][t[1]]=opponent;
+        $("#"+numbers[t[0]][t[1]]).html(opponent);   
+    
 });
 
 
@@ -89,6 +113,7 @@ function tictactoe(n)
    var  valx,valy,temp='';
 //console.log(n);
    //console.log(board[1][1]);
+ 
   switch (n) {
     case 1:
        valx=0;valy=0;
@@ -355,3 +380,4 @@ function minimax( board,  depth, isMax)
         return best;
     }
 }
+
