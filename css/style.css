@@ -76,3 +76,7 @@ button:hover{
 button:active{
    font-weight: bold;
 }
+
+body{
+  background-image:url(http://res.cloudinary.com/dzqifb2jz/image/upload/v1505676067/eqGgomN_sftsbu.png);
+}
